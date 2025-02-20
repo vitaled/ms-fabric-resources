@@ -89,12 +89,12 @@ Try {
 
 # Install the Data Gateway
 Try {
-    Write-Log "Installing Data Gateway..."
-    Install-DataGateway -Accept -ErrorAction Stop
-    Write-Log "Data Gateway installed successfully."
+   Write-Log "Installing Data Gateway..."
+   Install-DataGateway -Accept -ErrorAction Stop
+   Write-Log "Data Gateway installed successfully."
 } Catch {
-    Write-Log "Error installing Data Gateway: $_" "ERROR"
-    Exit 1
+   Write-Log "Error installing Data Gateway: $_" "ERROR"
+   Exit 1
 }
 
 # Check if a gateway with the given name already exists
@@ -104,6 +104,13 @@ Try {
 
     if ($existingGateway) {
         Write-Log "A gateway with the name '$gatewayName' already exists. Registering to the existing gateway."
+	$length = 32
+	$guid = [guid]::NewGuid().ToString('N')
+	$randomString = $guid.Substring(0, $length)
+	Add-DataGatewayClusterMember -RecoveryKey $secureRecoveryKey -GatewayClusterId $existingGateway.Id -GatewayName $randomString -OverwriteExistingGateway
+	(Get-DataGatewayCluster).memberGateways | Where-Object { $_.Name -ne $randomString } | ForEach-Object {
+     		Remove-DataGatewayClusterMember -MemberGatewayId $_.Id -GatewayClusterId $existingGateway.Id 
+ 	}
     } else {
         Write-Log "No existing gateway found. Proceeding with new gateway creation."
         
