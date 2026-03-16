@@ -1,0 +1,4 @@
+# Core dependencies
+azure-identity>=1.15.0
+pythonnet>=3.0.3
+requests>=2.31.0
