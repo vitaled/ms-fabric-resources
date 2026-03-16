@@ -1,0 +1,18 @@
+{
+    "AnalysisServices": {
+        "SubscriptionId": "<your-azure-subscription-id>",
+        "ResourceGroupName": "<your-resource-group>",
+        "ServerName": "asazure://<region>.asazure.windows.net/<servername>"
+    },
+    "ServiceTags": {
+        "ServiceTagNames": [
+            "PowerQueryOnline"
+        ],
+        "Regions": [],
+        "Comment": "Leave Regions empty [] to include all regions. Specify regions like ['westeurope','eastus'] to filter. ServiceTagNames: PowerBI covers Dataflow Gen2, DataFactory covers the underlying engine."
+    },
+    "AdditionalIPs": {
+        "Comment": "Add any extra IPs or ranges to always include in the firewall rules",
+        "IpRanges": []
+    }
+}

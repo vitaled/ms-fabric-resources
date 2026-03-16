@@ -1,0 +1,5 @@
+# Runtime / generated output
+last_ip_export.txt
+
+# Config contains subscription IDs and server details
+config.json

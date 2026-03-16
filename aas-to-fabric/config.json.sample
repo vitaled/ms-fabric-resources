@@ -1,0 +1,36 @@
+{
+    "source": {
+        "server": "asazure://<region>.asazure.windows.net/<servername>:rw",
+        "database": "<database-name>"
+    },
+    "target": {
+        "xmla_endpoint": "powerbi://api.powerbi.com/v1.0/myorg/<workspace-name>",
+        "dataset_name": "<dataset-name>"
+    },
+    "auth": {
+        "method": "interactive",
+        "tenant_id": "<your-tenant-id>",
+        "client_id": "<your-client-id>",
+        "client_secret": "<your-client-secret>"
+    },
+    "options": {
+        "export_bim": true,
+        "bim_output_path": "model.bim",
+        "strip_partitions": false,
+        "strip_data_sources": false,
+        "update_compatibility_level": null,
+        "include_tables": ["TableName"],
+        "exclude_tables": null,
+        "repoint_to_aas": null
+    },
+    "lakehouse_migration": {
+        "workspace_name": "<fabric-workspace-name>",
+        "lakehouse_name": "<lakehouse-name>",
+        "dataflow_name": "<dataflow-name>",
+        "semantic_model_name": "<semantic-model-name>",
+        "aas_server": null,
+        "aas_database": null,
+        "lakehouse_id": "<lakehouse-id>",
+        "sql_endpoint": "<sql-endpoint-hostname>"
+    }
+}

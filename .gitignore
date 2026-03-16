@@ -1,0 +1,30 @@
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# IDEs / editors
+.vscode/
+.idea/
+*.suo
+*.user
+*.sln.docstates
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+*.env
+
+# .NET
+*.dll
+*.pdb
+*.exe
+
+# Logs
+*.log

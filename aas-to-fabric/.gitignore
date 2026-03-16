@@ -1,0 +1,7 @@
+dotnet_libs/
+model.bim
+__pycache__/
+*.pyc
+
+# Config contains secrets (client_secret, tenant_id, etc.)
+config.json
