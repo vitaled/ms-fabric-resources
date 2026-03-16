@@ -1,4 +1,4 @@
-# Ferragamo — Azure Analysis Services Migration Toolkit
+# Azure Analysis Services Migration Toolkit
 
 Tools and scripts for migrating **Azure Analysis Services (AAS)** workloads to **Microsoft Fabric**.
 

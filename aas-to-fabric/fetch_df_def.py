@@ -6,7 +6,7 @@ from aas_to_fabric import load_config, get_access_token, SCOPE_POWERBI, _resolve
 
 cfg = load_config("config.json")
 token = get_access_token(cfg, SCOPE_POWERBI)
-ws_id = _resolve_workspace_id("ferragamo-demo", token)
+ws_id = _resolve_workspace_id(cfg["lakehouse_migration"]["workspace_name"], token)
 headers = {"Authorization": f"Bearer {token}"}
 
 resp = requests.get(
